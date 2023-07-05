@@ -28,3 +28,19 @@ async function fetch(pageno=1, pagesize=10){
         return null;
     }
 }
+
+function printContacts(contacts) {
+    const $parent = $('#tbody')
+    for(c of contacts) {
+      const html = `
+        <tr>
+          <td>${c.no}</td>
+          <td><a href='read.html?no=${c.no}'>${c.name}</a></td>
+          <td>${c.tel}</td>
+          <td>${c.address}</td>
+        </tr>
+      `;
+      $parent.append(html);
+    }
+  }
+  
