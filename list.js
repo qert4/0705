@@ -58,3 +58,27 @@ function printContacts(contacts) {
     console.log({prev, start, end, next, pageno})
     return {prev, start, end, next, pageno};
   }
+  function printPagination({prev, start, end, next}, pageno, $parent) {
+    if(prev>0) {
+      const html =`
+        <li class='page-item'>
+          <a class='page-link' href='list.html?pageno=${prev}'>이전으로</a>
+        </li>`;
+      $parent.append(html);
+    }
+    for(let i=start; i<=end; i++) {
+      const className = pageno===i? 'page-item active' : 'page-item';
+      const html =`
+        <li class='${className}'>
+          <a class='page-link' href='list.html?pageno=${i}'>${i}</a>
+        </li>`;
+      $parent.append(html);  
+    }
+    if(next>0) {
+      const html =`
+        <li class='page-item'>
+          <a class='page-link' href='list.html?pageno=${next}'>다음으로</a>
+        </li>`;
+      $parent.append(html);
+    }
+  }
