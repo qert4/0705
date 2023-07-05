@@ -24,6 +24,8 @@
                 location.href="index.html";
             }
             printContacts(result.contacts);
+            const pagination = getPagination(result);
+            printPagination(pagination);
         })
     </script>
 </head>

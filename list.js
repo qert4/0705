@@ -46,6 +46,7 @@ function printContacts(contacts) {
   
   function getPagination({pageno, pagesize, totalcount, blockSize=5}) {
     const countOfPage = Math.ceil(totalcount/pagesize);
+     // 구조 분해 할당 : 객체 -> 변수로 분해, 변수를 모아서 객체를 생성
     const prev = Math.floor((pageno-1)/blockSize)*blockSize;
     const start = prev+1;
     let end = prev + blockSize;
