@@ -44,3 +44,16 @@ function printContacts(contacts) {
     }
   }
   
+  function getPagination({pageno, pagesize, totalcount, blockSize=5}) {
+    const countOfPage = Math.ceil(totalcount/pagesize);
+    const prev = Math.floor((pageno-1)/blockSize)*blockSize;
+    const start = prev+1;
+    let end = prev + blockSize;
+    let next = end + 1;
+    if(end>=countOfPage) {
+      end = countOfPage;
+      next = 0;
+    }
+    console.log({prev, start, end, next, pageno})
+    return {prev, start, end, next, pageno};
+  }
