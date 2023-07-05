@@ -23,7 +23,7 @@
                 alert("서버가 응답하지 않습니다")
                 location.href="index.html";
             }
-            printContacts(result.contacts,('#tbody'));
+            printContacts(result.contacts,$('#tbody'));
             const pagination = getPagination(result);
             printPagination(pagination);
         })
@@ -53,7 +53,7 @@
 
                     </tbody>
                 </table>
-                <ul class="pagonation" id="pagination">
+                <ul class="pagonation" id="pagination" style="display: flex; justify-content: center;">
 
                 </ul>
             </section>
