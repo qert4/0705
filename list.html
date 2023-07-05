@@ -23,7 +23,7 @@
                 alert("서버가 응답하지 않습니다")
                 location.href="index.html";
             }
-            console.log(result);
+            printContacts(result.contacts);
         })
     </script>
 </head>
@@ -37,7 +37,24 @@
         </nav>
         <main>
             <aside></aside>
-            <section></section>
+            <section>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>이름</th>
+                            <th>연락처</th>
+                            <th>주소</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+                    </tbody>
+                </table>
+                <ul class="pagonation" id="pagination">
+
+                </ul>
+            </section>
             <aside></aside>
         </main>
         <footer>
